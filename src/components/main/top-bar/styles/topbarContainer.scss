@@ -1,0 +1,37 @@
+@import '../../../../assert/styles/variable';
+
+.wrapper-topbar {
+  position: relative;
+  background-color: $color-primary;
+  height: .45rem;
+  
+  .pane-left{
+
+    margin-left: .4rem;
+    
+    .icon-menu {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) scaleX(1.1);
+      font-size: .18rem;
+      color: white;
+    }
+
+    .icon-menu:hover::after {
+      content: '';
+      position: absolute;
+      top: -25%;
+      left: -25%;
+      background-color: white;
+      height: 150%;
+      width: 150%;
+      opacity: 0.35;
+      border-radius: 3px;
+    }
+  }
+
+}
+
+
+
+

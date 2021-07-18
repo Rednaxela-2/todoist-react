@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import  TopbarContainer from './components/main/top-bar/topbarContainer'
+import  LeftSideMenuContainer from './components/main/lefe-side-menu/leftSideMenuContainer'
+import { Row, Col} from 'antd'
+import './App.scss'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Row>
+        <TopbarContainer></TopbarContainer>
+      </Row>
+
+      <Row>
+        <Col className="panel-left" span={5}>
+          <LeftSideMenuContainer></LeftSideMenuContainer>
+        </Col>
+
+        <Col className="panel-right" span={19}>
+
+        </Col>
+      </Row>
+    </>
   );
 }
 
