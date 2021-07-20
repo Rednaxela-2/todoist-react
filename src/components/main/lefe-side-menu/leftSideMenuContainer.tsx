@@ -1,10 +1,27 @@
-import React, { useState } from 'react'
+import React, { forwardRef, useImperativeHandle, useState } from 'react'
 import { Menu, } from 'antd'
 import { MedicineBoxTwoTone, CalendarTwoTone, ClockCircleTwoTone } from '@ant-design/icons'
 
-const LeftSideMenuContainer : React.FC = (props)=> {
 
-  const [ isCollapsed, setIsCollapsed ] = useState(false)
+interface PropsType {
+  sendToParent : Function
+}
+
+const LeftSideMenuContainer : React.FC<PropsType>  = ({sendToParent})=> {
+
+  const [isCollapsed, setIsCollapsed] = useState(false)
+  
+  const toggleMenuState = ()=> {
+    setIsCollapsed(!isCollapsed)
+  }
+  sendToParent(toggleMenuState)
+
+  
+  // const [isCollapsed, setIsCollapsed ] = useState(false)
+
+  // useImperativeHandle(ref, () => ({
+  //   toggleIsColllapsed: ()=> setIsCollapsed(!isCollapsed)
+  // }))
 
   return (
     <Menu inlineCollapsed={isCollapsed} >
